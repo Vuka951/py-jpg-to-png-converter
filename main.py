@@ -19,5 +19,5 @@ if os.path.isdir('./pngs'):
 os.mkdir('./pngs')
 
 for file in filenames:
-    img = Image.open(f'{img_folder}/{file}')
-    img.save(f'./pngs/{file[:-4]}.png', 'png')
+    with Image.open(f'{img_folder}/{file}') as img:
+        img.save(f'./pngs/{file[:-4]}.png', 'png')
